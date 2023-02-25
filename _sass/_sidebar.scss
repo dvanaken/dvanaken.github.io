@@ -124,11 +124,6 @@
 .author__bio {
   margin: 0;
 
-  @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-
   a {
     color: inherit;
     text-decoration: none;
@@ -142,7 +137,11 @@
     width: 14px;
     height: 14px;
     vertical-align: middle;
-    color: $text-color;
+  }
+
+  @include breakpoint($large) {
+    margin-top: 10px;
+    margin-bottom: 50px;
   }
 }
 
