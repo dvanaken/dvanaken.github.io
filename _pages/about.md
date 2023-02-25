@@ -1,7 +1,7 @@
 ---
 permalink: /
-title: ""
-excerpt: ""
+title: "Dana Van Aken"
+excerpt: "Dana Van Aken"
 author_profile: true
 redirect_from: 
   - /about/
