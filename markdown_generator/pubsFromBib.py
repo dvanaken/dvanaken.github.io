@@ -22,6 +22,7 @@ import os
 import re
 
 bibfile = "publications.bib"
+base_path = "https://danavanaken.com"
 website_owner = "Dana Van Aken"
 
 def clean_text(s_):
@@ -48,17 +49,20 @@ for bib_id, entry in bibdata.entries.items():
     pub_date = f"{pub_year}-01-01"
     
     #strip out {} as needed (some bibtex entries that maintain formatting)
-    clean_title = clean_text(b["title"])
+    title = clean_text(b["title"])
 
-    url_slug = clean_title.replace(" ","-")    
+    url_slug = title.replace(" ","-")    
     url_slug = re.sub("\\[.*\\]|[^a-zA-Z0-9_-]", "", url_slug)
     url_slug = url_slug.replace("--","-")
 
     base_filename = (f"{pub_year}-{url_slug}").replace("--", "-")
+    #base_filename = clean_text(f"/files/{bib_id}")
+    #base_filename = re.sub("\\[.*\\]|[^a-zA-Z0-9_-]", "", base_filename)
     md_filename = f"{base_filename}.md"
 
-    url = f"https://danavanaken.com/files/{bib_id}.pdf"
-    clean_title = html_escape(clean_title)
+    permalink = clean_text(f"/files/{bib_id}.pdf")
+    url = f"{base_path}{permalink}"
+    title = html_escape(title)
     venue = html_escape(clean_text(b["booktitle"]))
 
     #citation authors - todo - add highlighting for primary author?
@@ -72,19 +76,19 @@ for bib_id, entry in bibdata.entries.items():
     authors = ", ".join(authors)
 
     #Build Citation from text
-    citation = f"{authors}.\n<i>{venue}<\i>, {pub_year}."
+    citation = html_escape(f"{authors}.\n<i>{venue}<\i>, {pub_year}.")
 
     ## YAML variables
     md = "\n".join((
         "---",
-        f"title: \"{html_escape(clean_title)}\"",
+        f"title: '{title}'",
         "collection: publications",
-        "permalink:",
+        f"permalink: {permalink}",
         f"date: {pub_date}",
-        f"year: {pub_year}",
-        f"venue: {venue}",
-        f"paper_url: {url}",
-        f"citation: {html_escape(citation)}",
+        #f"year: {pub_year}",
+        f"venue: '{venue}'",
+        f"paper_url: '{url}'",
+        f"citation: '{citation}'",
         "---",
     ))
 
