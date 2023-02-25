@@ -135,12 +135,6 @@
       text-decoration: underline;
     }
   }
-  
-  img {
-    width: 14px;
-    height: 14px;
-    vertical-align: middle;
-  }
 
   @include breakpoint($large) {
     margin-top: 10px;
@@ -251,5 +245,11 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  img {
+    width: 14px;
+    height: 14px;
+    //vertical-align: middle;
   }
 }
