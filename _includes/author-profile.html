@@ -19,12 +19,8 @@
     {% if author.bio %}
       <p class="author__bio">{{ author.bio }}
       {% if author.employer %}
-        <br>
-        {% if author.employer_url %}
-          <a href="{{ author.employer_url }}"><img src="{{ base_path }}/images/ottertune-icon-gray.svg"> {{ author.employer }}</a>
-        {% else %}
-          <img src="{{ base_path }}/images/ottertune-icon-gray.svg"> {{ author.employer }}
-        {% endif %}
+        , <a href="{{ author.employer.url }}">{{ author.employer.name }}</a>
+          <!-- <a href="{{ author.employer_url }}"><img src="{{ base_path }}/images/ottertune-icon-gray.svg">{{ author.employer }}</a> -->
       {% endif %}
       </p>
     {% endif %}
