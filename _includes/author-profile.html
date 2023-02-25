@@ -18,10 +18,7 @@
     <h3 class="author__name">{{ author.name }}</h3>
     {% if author.bio %}
       <p class="author__bio">{{ author.bio }}
-      {% if author.employer %}
-        , <a href="{{ author.employer.url }}">{{ author.employer.name }}</a>
-          <!-- <a href="{{ author.employer_url }}"><img src="{{ base_path }}/images/ottertune-icon-gray.svg">{{ author.employer }}</a> -->
-      {% endif %}
+      {% if author.employer %}{{ ", " }}<a href="{{ author.employer.url }}">{{ author.employer.name }}</a>{% endif %}
       </p>
     {% endif %}
   </div>
@@ -32,9 +29,10 @@
       {% if author.location %}
         <li><i class="fas fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.location }}</li>
       {% endif %}
-      <!-- {% if author.employer %}
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.employer }}</li>
-      {% endif %} -->
+      {% if author.employer %}
+        <!-- <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.employer }}</li> -->
+        <li><a href="{{ author.employer.url }}"><img src="{{ author.employee.logo | prepend: "/images/" | prepend: base_path }}"> {{ author.employer.name }}</a></li>
+      {% endif %}
       {% if author.uri %}
         <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
       {% endif %}
