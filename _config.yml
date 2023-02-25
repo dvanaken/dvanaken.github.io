@@ -84,8 +84,10 @@ author:
   avatar           : "nola-cropped.jpg"
   bio              : "Co-Founder & CTO"
   location         : "Seattle, WA"
-  employer         : "OtterTune"
-  employer_url     : "https://ottertune.com"
+  employer: 
+    name           : "OtterTune"
+    url            : "https://ottertune.com"
+    logo           : "ottertune-icon-gray.svg"
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=kGj5dRgAAAAJ"
   email            : "dvanaken@alumni.cmu.edu"
