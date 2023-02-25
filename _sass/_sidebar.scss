@@ -74,7 +74,6 @@
   display: table-cell;
   vertical-align: top;
   //width: 36px;
-  //width: 200px;
   // set width only, for non-square avatars
   // height: 36px;
 
@@ -82,7 +81,6 @@
     display: block;
     //width: auto;
     width: 200px;
-    //width: 100%;
     height: auto;
   }
 
@@ -131,7 +129,7 @@
 
   a {
     color: inherit;
-    text-decoration: none;
+    text-decoration: underline;
 
     &:hover {
       text-decoration: underline;
