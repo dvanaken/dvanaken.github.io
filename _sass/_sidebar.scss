@@ -128,6 +128,21 @@
     margin-top: 10px;
     margin-bottom: 20px;
   }
+
+  a {
+    /*display: block;
+    margin-bottom: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;*/
+    color: inherit;
+    /*font-size: $type-size-5;*/
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .author__urls-wrapper {
