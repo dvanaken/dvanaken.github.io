@@ -21,9 +21,9 @@
       {% if author.employer %}
         <br>
         {% if author.employer_url %}
-          <a href="{{ author.employer_url }}"><img style="width: 16px; height: 16px; vertical-align: middle;" src="{{ base_path }}/images/ottertune-icon-black.svg"> {{ author.employer }}</a>
+          <a href="{{ author.employer_url }}"><img src="{{ base_path }}/images/ottertune-icon-black.svg"> {{ author.employer }}</a>
         {% else %}
-          <img style="width: 16px; height: 16px" src="{{ base_path }}/images/ottertune-icon-black.svg"> {{ author.employer }}
+          <img src="{{ base_path }}/images/ottertune-icon-black.svg"> {{ author.employer }}
         {% endif %}
       {% endif %}
       </p>
