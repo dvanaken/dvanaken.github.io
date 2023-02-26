@@ -61,7 +61,7 @@
         {% endif %}
       </h3>
 
-      {% assign bauthor = "<strong>" | concat: site.name | concat: "</strong>" %}
+      {% assign bauthor = "<strong>" | append: site.name | append: "</strong>" %}
       {{ post.authors | replace: site.name, bauthor }}. <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}.
 
     {% endif %}
