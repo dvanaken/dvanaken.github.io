@@ -1,9 +1,9 @@
 ---
 title: 'Query-based Workload Forecasting for Self-Driving Database Management Systems'
 collection: publications
-permalink:
+permalink: /publications/2018-Query-based-Workload-Forecasting-for-Self-Driving-Database-Management-Systems
 date: 2018-01-01
-authors: Lin Ma, Dana Van Aken, Ahmed Hefny, Gustavo Mezerhane, Andrew Pavlo, Geoffrey J. Gordon
+authors: 'Lin Ma, Dana Van Aken, Ahmed Hefny, Gustavo Mezerhane, Andrew Pavlo, Geoffrey J. Gordon'
 venue: 'Proceedings of SIGMOD'
 paper_url: 'https://danavanaken.com/files/ma18-sigmod.pdf'
 citation: 'Lin Ma, Dana Van Aken, Ahmed Hefny, Gustavo Mezerhane, Andrew Pavlo, Geoffrey J. Gordon. Proceedings of SIGMOD, 2018.'

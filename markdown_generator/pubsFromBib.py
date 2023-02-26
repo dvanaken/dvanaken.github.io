@@ -60,6 +60,7 @@ for bib_id, entry in bibdata.entries.items():
     #base_filename = re.sub("\\[.*\\]|[^a-zA-Z0-9_-]", "", base_filename)
     md_filename = f"{base_filename}.md"
 
+    permalink = f"/publications/{base_filename}"
     #permalink = clean_text(f"/files/{bib_id}.pdf")
     url = f"{base_path}/files/{bib_id}.pdf"
     title = html_escape(title)
@@ -83,10 +84,10 @@ for bib_id, entry in bibdata.entries.items():
         "---",
         f"title: '{title}'",
         "collection: publications",
-        f"permalink:", # {permalink}",
+        f"permalink: {permalink}",
         f"date: {pub_date}",
         #f"year: {pub_year}",
-        f"authors: {authors}",
+        f"authors: '{authors}'",
         f"venue: '{venue}'",
         f"paper_url: '{url}'",
         f"citation: '{citation}'",
