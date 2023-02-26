@@ -7,7 +7,3 @@ venue: 'Journal 1'
 paperurl: 'http://danavanaken.com/files/paper2.pdf'
 citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
 ---
-
-<a href='http://danavanaken.com/files/paper2.pdf'>Download paper here</a>
-
-Recommended citation: Your Name, You. (2010). "Paper Title Number 2." <i>Journal 1</i>. 1(2).

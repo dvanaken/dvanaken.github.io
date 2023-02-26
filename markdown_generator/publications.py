@@ -55,6 +55,10 @@ def html_escape(text):
     return "".join(html_escape_table.get(c,c) for c in text)
 
 
+def not_empty(text):
+    return str(text) not in ('nan', '', None)
+
+
 # ## Creating the markdown files
 # 
 # This is where the heavy lifting is done. This loops through all the rows in the TSV dataframe, then starts to concatentate a big string (```md```) that contains the markdown for each type. It does the YAML metadata first, then does the description for the individual page. If you don't want something to appear (like the "Recommended citation")
@@ -76,16 +80,20 @@ for row, item in publications.iterrows():
     
     md += """\npermalink: /publication/""" + html_filename
     
-    if len(str(item.excerpt)) > 5:
+    #if len(str(item.excerpt)) > 5:
+    if not_empty(item.excerpt):
         md += "\nexcerpt: '" + html_escape(item.excerpt) + "'"
     
     md += "\ndate: " + str(item.pub_date) 
-    
-    md += "\nauthors: '" + html_escape(item.authors) + "'"
+
+    #if str(item.authors) not in ("nan", "", None):
+    if not_empty(item.authors):
+        md += "\nauthors: '" + html_escape(item.authors) + "'"
     
     md += "\nvenue: '" + html_escape(item.venue) + "'"
     
-    if len(str(item.paper_url)) > 5:
+    #if len(str(item.paper_url)) > 5:
+    if not_empty(item.paper_url):
         md += "\npaperurl: '" + item.paper_url + "'"
     
     md += "\ncitation: '" + html_escape(item.citation) + "'"
@@ -94,13 +102,13 @@ for row, item in publications.iterrows():
     
     ## Markdown description for individual page
     
-    if len(str(item.paper_url)) > 5:
-        md += "\n\n<a href='" + item.paper_url + "'>Download paper here</a>\n" 
-        
-    if len(str(item.excerpt)) > 5:
-        md += "\n" + html_escape(item.excerpt) + "\n"
-        
-    md += "\nRecommended citation: " + item.citation
+    #if len(str(item.paper_url)) > 5:
+    #    md += "\n\n<a href='" + item.paper_url + "'>Download paper here</a>\n" 
+    #    
+    #if len(str(item.excerpt)) > 5:
+    #    md += "\n" + html_escape(item.excerpt) + "\n"
+    #    
+    #md += "\nRecommended citation: " + item.citation
     
     md_filename = os.path.basename(md_filename)
        
