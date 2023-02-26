@@ -62,7 +62,10 @@
       </h3>
 
       {% assign bauthor = "<strong>" | append: site.name | append: "</strong>" %}
-      {{ post.authors | replace: site.name, bauthor }}.<br><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }}.
+      {% if post.pubtype %}
+        [{{ post.pubtype }}] 
+      {% endif %}
+      {{ post.authors | replace: site.name, bauthor }}.<br><i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%B %Y" }}.
 
     {% endif %}
 
