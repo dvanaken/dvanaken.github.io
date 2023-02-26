@@ -60,8 +60,8 @@ for bib_id, entry in bibdata.entries.items():
     #base_filename = re.sub("\\[.*\\]|[^a-zA-Z0-9_-]", "", base_filename)
     md_filename = f"{base_filename}.md"
 
-    permalink = clean_text(f"/files/{bib_id}.pdf")
-    url = f"{base_path}{permalink}"
+    #permalink = clean_text(f"/files/{bib_id}.pdf")
+    url = f"{base_path}/files/{bib_id}.pdf"
     title = html_escape(title)
     venue = html_escape(clean_text(b["booktitle"]))
 
@@ -70,26 +70,28 @@ for bib_id, entry in bibdata.entries.items():
     for author in entry.persons["author"]:
         name = " ".join(author.first_names + author.middle_names + \
             author.last_names) 
-        if name == website_owner:
-            name = f"<strong>{name}</strong>"
+        #if name == website_owner:
+        #    name = f"<strong>{name}</strong>"
         authors.append(name)
     authors = ", ".join(authors)
 
     #Build Citation from text
-    citation = html_escape(f"{authors}.\n<i>{venue}<\i>, {pub_year}.")
+    citation = html_escape(f"{authors}. {venue}, {pub_year}.")
 
     ## YAML variables
     md = "\n".join((
         "---",
         f"title: '{title}'",
         "collection: publications",
-        f"permalink: {permalink}",
+        f"permalink:", # {permalink}",
         f"date: {pub_date}",
         #f"year: {pub_year}",
+        f"authors: {authors}",
         f"venue: '{venue}'",
         f"paper_url: '{url}'",
         f"citation: '{citation}'",
         "---",
+        f"[Access paper here]({url}){:target=\"_blank\"}", 
     ))
 
     md_filename = os.path.basename(md_filename)
