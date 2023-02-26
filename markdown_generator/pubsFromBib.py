@@ -89,7 +89,7 @@ for bib_id, entry in bibdata.entries.items():
         #f"year: {pub_year}",
         f"authors: '{authors}'",
         f"venue: '{venue}'",
-        f"paper_url: '{url}'",
+        f"paperurl: '{url}'",
         f"citation: '{citation}'",
         "---",
         f"[Access paper here]({url}){{:target=\"_blank\"}}", 
