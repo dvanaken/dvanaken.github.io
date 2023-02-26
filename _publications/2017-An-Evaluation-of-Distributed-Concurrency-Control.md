@@ -1,10 +1,11 @@
 ---
 title: 'An Evaluation of Distributed Concurrency Control'
 collection: publications
-permalink: /files/harding17-vldb.pdf
+permalink:
 date: 2017-01-01
+authors: Rachael Harding, Dana Van Aken, Andrew Pavlo, Michael Stonebraker
 venue: 'Proceedings of the VLDB Endowment'
 paper_url: 'https://danavanaken.com/files/harding17-vldb.pdf'
-citation: 'Rachael Harding, <strong>Dana Van Aken</strong>, Andrew Pavlo, Michael Stonebraker.
-<i>Proceedings of the VLDB Endowment<\i>, 2017.'
+citation: 'Rachael Harding, Dana Van Aken, Andrew Pavlo, Michael Stonebraker. Proceedings of the VLDB Endowment, 2017.'
 ---
+[Access paper here](https://danavanaken.com/files/harding17-vldb.pdf){:target="_blank"}

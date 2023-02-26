@@ -91,7 +91,7 @@ for bib_id, entry in bibdata.entries.items():
         f"paper_url: '{url}'",
         f"citation: '{citation}'",
         "---",
-        f"[Access paper here]({url}){:target=\"_blank\"}", 
+        f"[Access paper here]({url}){{:target=\"_blank\"}}", 
     ))
 
     md_filename = os.path.basename(md_filename)

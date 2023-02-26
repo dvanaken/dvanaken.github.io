@@ -1,10 +1,11 @@
 ---
 title: 'Automatic Database Management System Tuning Through Large-scale Machine Learning'
 collection: publications
-permalink: /files/vanaken17-sigmod.pdf
+permalink:
 date: 2017-01-01
+authors: Dana Van Aken, Andrew Pavlo, Geoffrey J. Gordon, Bohan Zhang
 venue: 'Proceedings of the SIGMOD'
 paper_url: 'https://danavanaken.com/files/vanaken17-sigmod.pdf'
-citation: '<strong>Dana Van Aken</strong>, Andrew Pavlo, Geoffrey J. Gordon, Bohan Zhang.
-<i>Proceedings of the SIGMOD<\i>, 2017.'
+citation: 'Dana Van Aken, Andrew Pavlo, Geoffrey J. Gordon, Bohan Zhang. Proceedings of the SIGMOD, 2017.'
 ---
+[Access paper here](https://danavanaken.com/files/vanaken17-sigmod.pdf){:target="_blank"}
