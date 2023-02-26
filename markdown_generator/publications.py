@@ -23,6 +23,7 @@
 
 # In[2]:
 
+import os
 import pandas as pd
 
 
@@ -73,35 +74,37 @@ for row, item in publications.iterrows():
     year = item.pub_date[:4]
     
     ## YAML variables
-    
     md = "---\ntitle: \""   + item.title + '"\n'
     
     md += """collection: publications"""
     
     md += """\npermalink: /publication/""" + html_filename
     
-    #if len(str(item.excerpt)) > 5:
     if not_empty(item.excerpt):
         md += "\nexcerpt: '" + html_escape(item.excerpt) + "'"
     
     md += "\ndate: " + str(item.pub_date) 
 
-    #if str(item.authors) not in ("nan", "", None):
     if not_empty(item.authors):
         md += "\nauthors: '" + html_escape(item.authors) + "'"
     
     md += "\nvenue: '" + html_escape(item.venue) + "'"
     
-    #if len(str(item.paper_url)) > 5:
     if not_empty(item.paper_url):
         md += "\npaperurl: '" + item.paper_url + "'"
     
     md += "\ncitation: '" + html_escape(item.citation) + "'"
+
+    if not_empty(item.pub_type):
+        md += "\npubtype: '" + item.pub_type + "'"
+
     
     md += "\n---"
 
     md_filename = os.path.basename(md_filename)
-       
+
+    os.makedirs("../_publications", exist_ok=True)
+
     with open("../_publications/" + md_filename, 'w') as f:
         f.write(md)
 

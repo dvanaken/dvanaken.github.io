@@ -7,4 +7,5 @@ authors: 'Dana Van Aken, Djellel Eddine Difallah, Andrew Pavlo, Carlo Curino, Ph
 venue: 'Proceedings of SIGMOD'
 paperurl: 'http://danavanaken.com/files/vanaken15-sigmod.pdf'
 citation: 'Dana Van Aken, Djellel Eddine Difallah, Andrew Pavlo, Carlo Curino, Philippe Cudre-Mauroux. <i>Proceedings of SIGMOD</i>, 2015.'
+pubtype: 'DEMO'
 ---
