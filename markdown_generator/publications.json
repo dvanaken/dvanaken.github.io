@@ -1,0 +1,113 @@
+[
+  {
+    "date": "2014-10-01",
+    "title": "Customizable and Extensible Deployment for Mobile/Cloud Applications",
+    "venue": "Proceedings of the USENIX Symposium on Operating Systems Design and Implementation (OSDI)",
+    "citation": "Irene Zhang, Adriana Szekeres, Dana Van Aken, Isaac Ackerman, Steven D. Gribble, Arvind Krishnamurthy, Henry M. Levy. <i>Proceedings of the USENIX Symposium on Operating Systems Design and Implementation (OSDI)</i>, 2014.",
+    "urlslug": "zhang14-osdi",
+    "paperurl": "http://danavanaken.com/files/zhang14-osdi.pdf",
+    "authors": "Irene Zhang, Adriana Szekeres, Dana Van Aken, Isaac Ackerman, Steven D. Gribble, Arvind Krishnamurthy, Henry M. Levy"
+  },
+  {
+    "date": "2015-06-01",
+    "title": "BenchPress: Dynamic Workload Control in the OLTP-Bench Testbed",
+    "venue": "Proceedings of SIGMOD",
+    "citation": "Dana Van Aken, Djellel Eddine Difallah, Andrew Pavlo, Carlo Curino, Philippe Cudre-Mauroux. <i>Proceedings of SIGMOD</i>, 2015.",
+    "urlslug": "vanaken15-sigmod",
+    "paperurl": "http://danavanaken.com/files/vanaken15-sigmod.pdf",
+    "authors": "Dana Van Aken, Djellel Eddine Difallah, Andrew Pavlo, Carlo Curino, Philippe Cudre-Mauroux",
+    "pubtype": "DEMO"
+  },
+  {
+    "date": "2017-05-01",
+    "title": "Automatic Database Management System Tuning Through Large-scale Machine Learning",
+    "venue": "Proceedings of SIGMOD",
+    "citation": "Dana Van Aken, Andrew Pavlo, Geoffrey J. Gordon, Bohan Zhang. <i>Proceedings of SIGMOD</i>, 2017.",
+    "urlslug": "vanaken17-sigmod",
+    "paperurl": "http://danavanaken.com/files/vanaken17-sigmod.pdf",
+    "authors": "Dana Van Aken, Andrew Pavlo, Geoffrey J. Gordon, Bohan Zhang"
+  },
+  {
+    "date": "2017-06-02",
+    "title": "Tuning Your DBMS Automatically with Machine Learning",
+    "venue": "AWS Machine Learning Blog",
+    "citation": "Dana Van Aken, Geoffrey J. Gordon, Andrew Pavlo. <i>AWS Machine Learning Blog</i>, 2017.",
+    "urlslug": "vanaken17-aws",
+    "paperurl": "https://aws.amazon.com/blogs/machine-learning/tuning-your-dbms-automatically-with-machine-learning",
+    "authors": "Dana Van Aken, Geoffrey J. Gordon, Andrew Pavlo"
+  },
+  {
+    "date": "2017-01-01",
+    "title": "An Evaluation of Distributed Concurrency Control",
+    "venue": "Proceedings of the VLDB Endowment",
+    "citation": "Rachael Harding, Dana Van Aken, Andrew Pavlo, Michael Stonebraker. <i>Proceedings of the VLDB Endowment</i>, 2017.",
+    "urlslug": "harding17-vldb",
+    "paperurl": "http://danavanaken.com/files/harding17-vldb.pdf",
+    "authors": "Rachael Harding, Dana Van Aken, Andrew Pavlo, Michael Stonebraker"
+  },
+  {
+    "date": "2017-01-01",
+    "title": "Self-Driving Database Management Systems",
+    "venue": "Proceedings of CIDR",
+    "citation": "Andrew Pavlo, Gustavo Angulo, Joy Arulraj, Haibin Lin, Jiexi Lin, Lin Ma, Prashanth Menon, Todd C. Mowry, Matthew Perron, Ian Quah, Siddharth Santurkar, Anthony Tomasic, Skye Toor, Dana Van Aken, Ziqi Wang, Yingjun Wu, Ran Xian, Tieying Zhang. <i>Proceedings of CIDR</i>, 2017.",
+    "urlslug": "pavlo17-cidr",
+    "paperurl": "http://danavanaken.com/files/pavlo17-cidr.pdf",
+    "authors": "Andrew Pavlo, Gustavo Angulo, Joy Arulraj, Haibin Lin, Jiexi Lin, Lin Ma, Prashanth Menon, Todd C. Mowry, Matthew Perron, Ian Quah, Siddharth Santurkar, Anthony Tomasic, Skye Toor, Dana Van Aken, Ziqi Wang, Yingjun Wu, Ran Xian, Tieying Zhang"
+  },
+  {
+    "date": "2018-08-01",
+    "title": "A Demonstration of the OtterTune Automatic Database Management System Tuning Service",
+    "venue": "Proceedings of the VLDB Endowment",
+    "citation": "Bohan Zhang, Dana Van Aken, Justin Wang, Tao Dai, Shuli Jiang, Jacky Lao, Siyuan Sheng, Andrew Pavlo, Geoffrey J. Gordon. <i>Proceedings of the VLDB Endowment</i>, 2018.",
+    "urlslug": "zhang18-vldb",
+    "paperurl": "http://danavanaken.com/files/zhang18-vldb.pdf",
+    "authors": "Bohan Zhang, Dana Van Aken, Justin Wang, Tao Dai, Shuli Jiang, Jacky Lao, Siyuan Sheng, Andrew Pavlo, Geoffrey J. Gordon",
+    "pubtype": "DEMO"
+  },
+  {
+    "date": "2018-06-01",
+    "title": "Query-based Workload Forecasting for Self-Driving Database Management Systems",
+    "venue": "Proceedings of SIGMOD",
+    "excerpt": "",
+    "citation": "Lin Ma, Dana Van Aken, Ahmed Hefny, Gustavo Mezerhane, Andrew Pavlo, Geoffrey J. Gordon. <i>Proceedings of SIGMOD</i>, 2018.",
+    "urlslug": "ma18-sigmod",
+    "paperurl": "http://danavanaken.com/files/ma18-sigmodb.pdf",
+    "authors": "Lin Ma, Dana Van Aken, Ahmed Hefny, Gustavo Mezerhane, Andrew Pavlo, Geoffrey J. Gordon"
+  },
+  {
+    "date": "2019-06-01",
+    "title": "External vs. Internal: An Essay on Machine Learning Agents for Autonomous Database Management Systems",
+    "venue": "IEEE Data Engineering Bulletin",
+    "citation": "Andrew Pavlo, Matthew Butrovich, Ananya Joshi, Lin Ma, Prashanth Menon, Dana Van Aken, Lisa Lee, Ruslan Salakhutdinov. <i>IEEE Data Engineering Bulletin</i>, 2019.",
+    "urlslug": "pavlo19-ieee",
+    "paperurl": "http://danavanaken.com/files/pavlo19-ieee.pdf",
+    "authors": "Andrew Pavlo, Matthew Butrovich, Ananya Joshi, Lin Ma, Prashanth Menon, Dana Van Aken, Lisa Lee, Ruslan Salakhutdinov"
+  },
+  {
+    "date": "2021-03-01",
+    "title": "An Inquiry into Machine Learning-based Automatic Configuration Tuning Services on Real-World Database Management Systems",
+    "venue": "Proceedings of the VLDB Endowment",
+    "citation": "Dana Van Aken, Dongsheng Yang, Sebastien Brillard, Ari Fiorino, Bohan Zhang, Christian Billian, Andrew Pavlo. <i>Proceedings of the VLDB Endowment</i>, 2021.",
+    "urlslug": "vanaken21-vldb",
+    "paperurl": "http://danavanaken.com/files/vanaken21-vldb.pdf",
+    "authors": "Dana Van Aken, Dongsheng Yang, Sebastien Brillard, Ari Fiorino, Bohan Zhang, Christian Billian, Andrew Pavlo"
+  },
+  {
+    "date": "2021-02-01",
+    "title": "On Automatic Database Management System Tuning Using Machine Learning",
+    "venue": "Ph.D. Thesis, Carnegie Mellon University",
+    "citation": "Dana Van Aken. <i>Ph.D. Thesis, Carnegie Mellon University</i>, 2021.",
+    "urlslug": "vanaken21-thesis",
+    "paperurl": "http://danavanaken.com/files/vanaken21-thesis.pdf",
+    "authors": "Dana Van Aken"
+  },
+  {
+    "date": "2021-01-01",
+    "title": "Make Your Database System Dream of Electric Sheep: Towards Self-Driving Operation",
+    "venue": "Proceedings of the VLDB Endowment",
+    "citation": "Andy Pavlo, Matthew Butrovich, Lin Ma, Prashanth Menon, Wan Shen Lim, Dana Van Aken, William Zhang. <i>Proceedings of the VLDB Endowment</i>, 2021.",
+    "urlslug": "pavlo21-vldb",
+    "paperurl": "http://danavanaken.com/files/pavlo21-vldb.pdf",
+    "authors": "Andy Pavlo, Matthew Butrovich, Lin Ma, Prashanth Menon, Wan Shen Lim, Dana Van Aken, William Zhang"
+  }
+]

@@ -1,11 +1,6 @@
-
-# coding: utf-8
-
 # # Publications markdown generator for academicpages
 # 
 # Takes a TSV of publications with metadata and converts them for use with [academicpages.github.io](academicpages.github.io). This is an interactive Jupyter notebook, with the core python code in publications.py. Run either from the `markdown_generator` folder after replacing `publications.tsv` with one that fits your format.
-# 
-# TODO: Make this work with BibTex and other databases of citations, rather than Stuart's non-standard TSV format and citation style.
 # 
 
 # ## Data format
@@ -17,14 +12,10 @@
 # - `url_slug` will be the descriptive part of the .md file and the permalink URL for the page about the paper. The .md file will be `YYYY-MM-DD-[url_slug].md` and the permalink will be `https://[yourdomain]/publications/YYYY-MM-DD-[url_slug]`
 
 
-# ## Import pandas
-# 
-# We are using the very handy pandas library for dataframes.
 
-# In[2]:
-
+import csv
+import json
 import os
-import pandas as pd
 
 
 # ## Import TSV
@@ -33,79 +24,99 @@ import pandas as pd
 # 
 # I found it important to put this data in a tab-separated values format, because there are a lot of commas in this kind of data and comma-separated values can get messed up. However, you can modify the import statement, as pandas also has read_excel(), read_json(), and others.
 
-# In[3]:
+PUBS_INPUT_FILE = "publications.json"
 
-publications = pd.read_csv("publications.tsv", sep="\t", header=0)
-publications
+PUBS_OUTPUT_DIR = "../_publications"  # output directory
 
-
-# ## Escape special characters
-# 
-# YAML is very picky about how it takes a valid string, so we are replacing single and double quotes (and ampersands) with their HTML encoded equivilents. This makes them look not so readable in raw format, but they are parsed and rendered nicely.
-
-# In[4]:
-
-html_escape_table = {
-    "&": "&amp;",
-    '"': "&quot;",
-    "'": "&apos;"
-    }
 
 def html_escape(text):
     """Produce entities within text."""
+    # ## Escape special characters
+    # 
+    # YAML is very picky about how it takes a valid string, so we are replacing single and
+    # double quotes (and ampersands) with their HTML encoded equivilents. This makes them
+    # look not so readable in raw format, but they are parsed and rendered nicely.
+    html_escape_table = {
+        "&": "&amp;",
+        '"': "&quot;",
+        "'": "&apos;",
+    }
     return "".join(html_escape_table.get(c,c) for c in text)
 
 
-def not_empty(text):
-    return str(text) not in ('nan', '', None)
+def load_file(filename=PUBS_INPUT_FILE):
+    ext = filename.rsplit(".", 1)[-1]
+
+    if ext == "json":
+        with open(filename, "r") as f:
+            publications = json.load(f)
+
+    elif ext in ("csv", "tsv"):
+        sep = "," if ext == "csv" else "\t"
+        publications = []
+        with open(filename, "r", newline="") as f:
+            reader = csv.reader(f, delimiter=sep)
+            header = next(reader)
+
+            for row in reader:
+                publications.append(dict(zip(header, row)))
+
+    else:
+        raise Exception(f"Unsupported file type: {filename}")
+
+    return publications
 
 
-# ## Creating the markdown files
-# 
-# This is where the heavy lifting is done. This loops through all the rows in the TSV dataframe, then starts to concatentate a big string (```md```) that contains the markdown for each type. It does the YAML metadata first, then does the description for the individual page. If you don't want something to appear (like the "Recommended citation")
+def process_publication(
+    **kwargs,
+):
+    basename = f"{kwargs['date']}-{kwargs['urlslug']}"
+    md_filename = f"{basename}.md"
+    kwargs["permalink"] = f"/publications/{basename}"
+    kwargs["collection"] = "publications"
 
-# In[5]:
+    md = ["---"]
 
-import os
-for row, item in publications.iterrows():
-    
-    md_filename = str(item.pub_date) + "-" + item.url_slug + ".md"
-    html_filename = str(item.pub_date) + "-" + item.url_slug
-    year = item.pub_date[:4]
-    
-    ## YAML variables
-    md = "---\ntitle: \""   + item.title + '"\n'
-    
-    md += """collection: publications"""
-    
-    md += """\npermalink: /publication/""" + html_filename
-    
-    if not_empty(item.excerpt):
-        md += "\nexcerpt: '" + html_escape(item.excerpt) + "'"
-    
-    md += "\ndate: " + str(item.pub_date) 
+    keys = (
+        "title",
+        "collection",
+        "permalink",
+        "date",
+        "authors",
+        "venue",
+        "paperurl",
+        "pubtype",
+    )
 
-    if not_empty(item.authors):
-        md += "\nauthors: '" + html_escape(item.authors) + "'"
-    
-    md += "\nvenue: '" + html_escape(item.venue) + "'"
-    
-    if not_empty(item.paper_url):
-        md += "\npaperurl: '" + item.paper_url + "'"
-    
-    md += "\ncitation: '" + html_escape(item.citation) + "'"
+    for key in keys:
+        if key in kwargs:
+            value = html_escape(kwargs[key])
+            if key != "date":
+                value = f"'{value}'"
+            md.append(f"{key}: {value}")
+        else:
+            assert key in ("pubtype",), key
 
-    if not_empty(item.pub_type):
-        md += "\npubtype: '" + item.pub_type + "'"
+    md.append("---")
+    md = "\n".join(md)
 
-    
-    md += "\n---"
+    return md, md_filename
 
-    md_filename = os.path.basename(md_filename)
 
-    os.makedirs("../_publications", exist_ok=True)
 
-    with open("../_publications/" + md_filename, 'w') as f:
-        f.write(md)
+def main():
+    os.makedirs(PUBS_OUTPUT_DIR, exist_ok=True)
 
+    publications = load_file()
+
+    for entry in publications:
+
+        md, md_filename = process_publication(**entry)
+
+        with open(os.path.join(PUBS_OUTPUT_DIR, md_filename), "w") as f:
+            f.write(md)
+
+
+if __name__ == "__main__":
+    main()
 
